@@ -72,4 +72,4 @@ async def watcher():
         
 watcher.start()
 
-bot.run('NzEwMzY0NzIxOTA3MzY3OTU2.XrzYuA.-H5nXB1gLCfFu3Ztm5_MvThcZws')
+bot.run('Your Token')
