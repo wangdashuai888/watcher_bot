@@ -41,7 +41,7 @@ async def on_message(msg):
     ch = bot.get_channel(misc_channel)
     if msg.channel.id != misc_channel and msg.content.startswith("!"):
         q.put(msg.id) #queue for print message
-        msg.delete() 
+        await msg.delete() 
         while(q.queue[0] != msg.id): #while i'm not at the front of the queue
             pass
         await ch.send(msg.author.mention + " ***All music commands needs to be send in this channel***")
@@ -49,7 +49,7 @@ async def on_message(msg):
         q.get()#pop after i'm done
     if msg.channel.id != misc_channel and msg.author.id == misc_bot:
         q.put(msg.id) #queue for print message
-        msg.delete()
+        await msg.delete()
         while(q.queue[0] != msg.id): #while i'm not at the front of the queue
             pass
         if msg.embeds != []:
